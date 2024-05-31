@@ -1,0 +1,10 @@
+.nav-item{
+    margin: auto 15px;
+}
+
+.btn-cart{
+    margin-bottom: 3px;
+}
+.btn-cart:hover{
+    fill: red;
+}

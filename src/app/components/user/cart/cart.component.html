@@ -1,0 +1,75 @@
+<app-navbar></app-navbar>
+<ng-toast />
+<div class="container">
+    <div class="mt-5 mb-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a routerLink="/home" class="text-decoration-none text-dark">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Cart</li>
+            </ol>
+        </nav>
+    </div>
+    @if(cart.length > 0){
+    <div class="row mb-5">
+        <div class="col-md-8">
+            <table class="table table-bordered rounded">
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col" width="30%">Name</th>
+                        <th scope="col" width="10%">Price</th>
+                        <th scope="col" width="7%">Quantity</th>
+                        <th scope="col" width="10%">Total price</th>
+                        <th scope="col" width="7%">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(item of cart; track item.product.id){
+                    <tr>
+                        <td>
+                            <img class="product-image" src="../../../assets/images/product/{{ item.product.image }}"
+                                alt="" />
+                            {{ item.product.name }}
+                        </td>
+                        <td class="fw-bold">{{ item.product.price }}</td>
+                        <td class="d-flex">
+                            <button class="btn btn-outline-light text-dark">
+                                <i class="bi bi-dash"></i>
+                            </button>
+                            <input type="number" class="form-control mx-1" value="1" />
+                            <button class="btn btn-outline-light text-dark">
+                                <i class="bi bi-plus"></i>
+                            </button>
+                        </td>
+                        <td class="fw-bold text-danger">123</td>
+                        <td>
+                            <button class="btn btn-outline-dark" (click)="removeItem(item.product)" title="Delete">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">Subtotal</div>
+                <div class="card-body">
+                    <div class="d-flex">
+                        <h5 class="card-title">Total bill:</h5>
+                        <h5 class="card-price text-danger ms-auto">13.290.000 đ</h5>
+                    </div>
+                    <a routerLink="/check-out" class="btn btn-primary fw-bold mt-2 w-100">Continue to checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+    @else {
+        <h2>Your cart is empty</h2>
+    }
+</div>
+
+<app-footer></app-footer>

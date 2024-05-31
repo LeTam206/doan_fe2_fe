@@ -1,0 +1,115 @@
+<app-navbar></app-navbar>
+<ng-toast />
+<div class="container mt-5 mb-5">
+    <!-- Breadcrumb -->
+    <div class="mt-5 mb-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a routerLink="/home" class="text-decoration-none text-dark">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Shop</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="row g-2">
+        <!-- Fillter -->
+        <div class="col-md-2 border shadow-sm rounded fillter">
+            <div class="brand p-3 border-bottom">
+                <div class="heading d-flex justify-content-between align-items-center">
+                    <h6 class="text-uppercase">Brand</h6>
+                </div>
+                <div class="d-flex justify-content-between mt-2 ms-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="">
+                        <label class="form-check-label" for="flexCheckDefault"> Apple </label>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between mt-2 ms-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="">
+                        <label class="form-check-label" for="flexCheckChecked"> Asus </label>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between mt-2 ms-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="">
+                        <label class="form-check-label" for="flexCheckChecked"> Dell </label>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between mt-2 ms-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="">
+                        <label class="form-check-label" for="flexCheckChecked"> Lenovo </label>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between mt-2 ms-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="">
+                        <label class="form-check-label" for="flexCheckChecked"> Acer </label>
+                    </div>
+                </div>
+            </div>
+            <div class="type p-3">
+                <div class="heading d-flex justify-content-between align-items-center">
+                    <h6 class="text-uppercase">Type</h6>
+                </div>
+                <div class="d-flex justify-content-between mt-2 ms-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="">
+                        <label class="form-check-label" for="flexCheckDefault"> Smartphone </label>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between mt-2 ms-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="">
+                        <label class="form-check-label" for="flexCheckChecked"> Laptop </label>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between mt-2 ms-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="">
+                        <label class="form-check-label" for="flexCheckChecked"> Desktop </label>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between mt-2 ms-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="">
+                        <label class="form-check-label" for="flexCheckChecked"> Tablets </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product List -->
+        <div class="col-md-10 product-list">
+            <app-product-list></app-product-list>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-4 mx-auto" id="exampleModalLabel">PRODUCT INFORMATION</h1>
+                <button type="button" class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img class="modal-product-image w-100" src="" alt="">
+                        <h4 class="modal-product-name"></h4>
+                        <h4 class="modal-product-price text-danger"></h4>
+                    </div>
+                    <div class="col-md-6 p-0">
+                        <p class="modal-product-description"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
